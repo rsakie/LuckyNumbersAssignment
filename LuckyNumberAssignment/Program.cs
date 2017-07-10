@@ -66,7 +66,8 @@ namespace LuckyNumberAssignment
                     }
                 }
             }
-           
+           // ask user if they want to try again.
+           // if yes start over/ no = end game
            
 
                 Console.WriteLine("Do you want to try again? YES or NO");

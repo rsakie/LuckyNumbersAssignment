@@ -11,79 +11,82 @@ namespace LuckyNumberAssignment
         static void Main(string[] args)
         {
 
+            string playagain;
 
 
-            //Console.WriteLine("Welcome to Lucky Numbers!!");
-
-            //// Ask the user for a starting number for the lowest number in the number range.
-            //// Ask the user for an ending number for the highest number in the number range.
-
-            //Console.WriteLine("To play you must input two numbers.\n");
-            //Console.WriteLine("Please enter your first number, Make sure its between 1 and 30 and very low.\n");
-            //int firstNum = int.Parse(Console.ReadLine());
-
-            //Console.WriteLine("Now please enter a second number, But make it a really high one upto 30.\n");
-            //int secNum = int.Parse(Console.ReadLine());
-
-            //Console.WriteLine("Now please enter 6 numbers");
-            ////set my array
-            //int[] luckyNumbers = new int[6];
-            //for (int i = 0; i < luckyNumbers.Length; i++)
-            //{
-            //    Console.WriteLine("Please enter a number between 1 and 30");
-            //    luckyNumbers[i] = int.Parse(Console.ReadLine());
-            //    if (luckyNumbers[i] < firstNum || luckyNumbers[i] > secNum)
-            //    {
-            //        Console.WriteLine("Please enter a number between 1 and 30");
-            //        break;
-            //    }
-            //    else if (firstNum < 1 || firstNum > 30)
-            //    {
-            //        Console.WriteLine("Please enter a number between 1 and 30");
-            //        break;
-            //    }
-            //    if (secNum > 30 || secNum < 1)
-            //    {
-            //        Console.WriteLine("Please enter a number between 1 and 30");
-            //        break;
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine();
-            //    }
-            //}
-
-
-            //ask the user to guess the 6 numbers the user thinks will be the lucky numbers generated within the number range.
-            // Numbers must be stored in an array
-            // Array must be populated using a loop
-            //If the user enters a number that is outside of the range set,
-            //  prompt the user to give you a valid number. Do this until the user enters a valid number
-            //generate a  6 random numbers
-             Random randomNumber = new Random();
-            int luckyNumbers = randomNumber.Next(1,30);
+            Console.WriteLine("\t Welcome to Guess the Lucky Numbers!! The JACKPOT is now $250,000!!! \n ");
+            Console.WriteLine("\t To win the Jackpot you must guess the numbers correctly! ");
+            // Ask the user for a starting number for the lowest number in the number range.
+            // Ask the user for an ending number for the highest number in the number range.
+            // let user aware of jackpot #
             
-            Console.WriteLine("Your Lucky Numbers are: "+ " " + luckyNumbers); 
+            Console.WriteLine("\t \t To play you must input two numbers.\n ");
+            Console.WriteLine("Please enter your first number, Make sure its very low between 1 and 30. ");
+            int firstNum = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Now please enter a second number, But make sure its a really high up to 30. ");
+            int secNum = int.Parse(Console.ReadLine());
+
+            //ask the user to guess the 6 numbers the user thinks will
+            //be the lucky numbers generated within the number range.
+            Console.WriteLine("Now please enter 6 numbers you think are lucky between the 2 numbers already");
+            int number = int.Parse(Console.ReadLine());
+            int[] selNum = new int[6];
+
+            for (int i = 0; i < 6; i++)
+            {
+                Console.WriteLine("Enter a number");
+                selNum[i] = int.Parse(Console.ReadLine());
+
+                {
+                    while (selNum[i] < firstNum && selNum[i] > secNum)
+                    {
+                        Console.WriteLine("Invalid number, Please enter a number between 1 and 30.");
+                       
+                    }
+                }
+                //  Array must be populated using a loop
+                //  set my array, store in array
+                //  gen random number and compare them to users picked 6 numbers
+                //
+                //needed to add a counter but was unsuccessful
+                Random ranNumber = new Random();
+                 
+                int[] luckyNumbers = { ranNumber.Next(1, 31) };
+                foreach (int num in luckyNumbers)
+                    Console.WriteLine("Your Lucky Number Is: " + num);
+                for (int l = 0; l < luckyNumbers.Length; l++)
+                    if (selNum[i] == luckyNumbers[l])
+               
+                {
+                    if (selNum[i] != ranNumber.Next())
+                    {
+
+                        Console.WriteLine("You didnt guess correctly.");
+                    }
+                }
+            }
            
            
-            //int numOne = randomNumber.Next(1, 30);
-            //Console.WriteLine("Lucky Number" + " " + numOne);
-            //int numTwo = randomNumber.Next(1, 30);
-            //Console.WriteLine("Lucky Number" + " " + numTwo);
-            //int numThree = randomNumber.Next(1, 30);
-            //Console.WriteLine("Lucky Number" + " " + numThree);
-            //int numFour = randomNumber.Next(1, 30);
-            //Console.WriteLine("Lucky Number" + " " + numFour);
-            //int numFive = randomNumber.Next(1, 30);
-            //Console.WriteLine("Lucky Number" + " " + numFive);
-            //int numSix = randomNumber.Next(1, 30);
-            //Console.WriteLine("Lucky Number" + " " + numSix);
-            //int[] randomSix = { numOne, numTwo, numThree, numFour, numFive, numSix };
 
+                Console.WriteLine("Do you want to try again? YES or NO");
+                playagain = Console.ReadLine().ToUpper();
 
+                if (playagain == "NO")
 
-        }
+                    Console.WriteLine("Thanks for Playing!!");
+            }
         }
     }
+
+                        
+           
+        
+    
+
+
+
+
+
 
 
